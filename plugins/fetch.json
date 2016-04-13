@@ -6,5 +6,13 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "com.plugin.callphone": {
+        "source": {
+            "type": "local",
+            "path": "../CallPhonePlugin"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

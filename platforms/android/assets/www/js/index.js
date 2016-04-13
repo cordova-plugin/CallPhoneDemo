@@ -41,6 +41,16 @@ var app = {
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 
+        var phoneNumber = document.getElementById('phoneNumber').value;
+        var bt   = document.getElementById('callPhoneNumber');
+        var _cb = function(result) {
+          console.log(result);
+        }
+
+        bt.addEventListener('click', function() {
+          CallPhonePlugin.call(phoneNumber, _cb, _cb);
+        });
+
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 

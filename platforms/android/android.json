@@ -14,11 +14,34 @@
                         }
                     ]
                 }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"CallPhonePlugin\"><param name=\"android-package\" value=\"com.plugin.CallPhonePlugin\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CALL_PHONE\" />",
+                            "count": 1
+                        }
+                    ]
+                }
             }
         }
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "com.plugin.callphone": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
@@ -29,9 +52,18 @@
             "id": "cordova-plugin-whitelist.whitelist",
             "pluginId": "cordova-plugin-whitelist",
             "runs": true
+        },
+        {
+            "file": "plugins/com.plugin.callphone/www/CallPhonePlugin.js",
+            "id": "com.plugin.callphone.CallPhonePlugin",
+            "pluginId": "com.plugin.callphone",
+            "clobbers": [
+                "cordova.plugins.CallPhonePlugin"
+            ]
         }
     ],
     "plugin_metadata": {
-        "cordova-plugin-whitelist": "1.2.1"
+        "cordova-plugin-whitelist": "1.2.1",
+        "com.plugin.callphone": "0.0.1"
     }
 }
