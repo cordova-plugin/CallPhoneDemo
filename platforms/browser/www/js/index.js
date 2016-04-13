@@ -41,13 +41,15 @@ var app = {
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 
-        var phoneNumber = document.getElementById('phoneNumber').value;
         var bt   = document.getElementById('callPhoneNumber');
         var _cb = function(result) {
           console.log(result);
         }
 
+        var phoneNumber = document.getElementById('phoneNumber').value;
         bt.addEventListener('click', function() {
+          var phoneNumber = document.getElementById('phoneNumber').value;
+          console.log(phoneNumber);
           CallPhonePlugin.call(phoneNumber, _cb, _cb);
         });
 
